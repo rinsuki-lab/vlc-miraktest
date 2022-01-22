@@ -66,6 +66,6 @@ jobs:
           brew install gnutls
       - name: Build
         run: |
-          ./buildMobileVLCKit.sh -x
+          ./buildMobileVLCKit.sh -x -n
       - name: Check
         run: ls -la
