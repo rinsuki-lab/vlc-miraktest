@@ -44,7 +44,7 @@ jobs:
         with:
           repository: "videolan/vlc"
           path: libvlc/vlc
-          ref: ${{ env.VLC_HASH }}
+          ref: 97867416201533742be3effa2abfe3c02fafd95c
       - uses: actions/checkout@v2
         with:
           path: vlc-build
