@@ -63,7 +63,7 @@ jobs:
         working-directory: ./libvlc/vlc
       - name: Apply Patches to VLCKit itself
         run: |
-          patch -p1 < vlc-build/patches/vlckit/gnutls.patch
+          patch < vlc-build/patches/vlckit/gnutls.patch
       - name: Install Dependencies
         run: |
           brew install gnutls
