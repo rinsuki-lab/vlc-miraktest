@@ -40,6 +40,8 @@ jobs:
         with:
           repository: "videolan/VLCKit"
           ref: ${{ env.VLCKIT_HASH }}
+      - run: ls .
+      - run: ls libvlc/
       - uses: actions/checkout@v2
         with:
           repository: "videolan/vlc"
