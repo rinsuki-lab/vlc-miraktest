@@ -39,7 +39,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           repository: "videolan/VLCKit"
-          ref: ${{ env.VLC_HASH }}
+          ref: ${{ env.VLCKIT_HASH }}
       - uses: actions/checkout@v2
         with:
           repository: "videolan/vlc"
