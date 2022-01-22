@@ -40,8 +40,6 @@ jobs:
         with:
           repository: "videolan/VLCKit"
           ref: ${{ env.VLCKIT_HASH }}
-      - run: ls .
-      - run: ls libvlc/
       - uses: actions/checkout@v2
         with:
           repository: "videolan/vlc"
@@ -50,14 +48,24 @@ jobs:
       - uses: actions/checkout@v2
         with:
           path: vlc-build
-      - run: ls vlc-build/patches/
-      - run: ls libvlc/patches/
-      - name: Prepare
+      - name: Apply VLCKit patches
+        run: git am ../../Resources/MobileVLCKit/patches/*.patch
+        working-directory: libvlc/vlc
+      - name: Apply MirakTest patches
+        run: 
+          patch -p1 < ../../vlc-build/patches/patch_mac_build_arg.patch
+          patch -p1 < ../../vlc-build/patches/dump_aribsub.patch
+          patch -p1 < ../../vlc-build/patches/dump_pcr.patch
+          patch -p1 < ../../vlc-build/patches/dump_tot.patch
+          patch -p1 < ../../vlc-build/patches/patch_version.patch
+          patch -p1 < ../../vlc-build/patches/patch_user_agent.patch
+        run: git am ../../vlc-build/patches/*.patch
+        working-directory: libvlc/vlc
+      - name: Install Dependencies
         run: |
-          cp vlc-build/patches/*.patch libvlc/patches/
           brew install gnutls
       - name: Build
         run: |
-          ./compileAndBuildVLCKit.sh -x
+          ./buildMobileVLCKit.sh -x
       - name: Check
         run: ls -la
