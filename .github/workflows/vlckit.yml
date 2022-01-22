@@ -71,7 +71,7 @@ jobs:
         run: |
           ./buildMobileVLCKit.sh -x -n
       - name: Pack build artifact
-        run: zip -rq VLCKit.framework.zip ./VLCKit.framework
+        run: zip -rq VLCKit.framework.zip ./build/VLCKit.framework
       - name: Upload build artifact
         uses: actions/upload-artifact@v2
         with:
