@@ -56,10 +56,10 @@ jobs:
           patch -p1 < ../../vlc-build/patches/dump_tot.patch
           patch -p1 < ../../vlc-build/patches/patch_version.patch
           patch -p1 < ../../vlc-build/patches/patch_user_agent.patch
-        working-directory: libvlc/vlc
+        working-directory: ./libvlc/vlc
       - name: Apply VLCKit patches
         run: git am ../../Resources/MobileVLCKit/patches/*.patch
-        working-directory: libvlc/vlc
+        working-directory: ./libvlc/vlc
       - name: Install Dependencies
         run: |
           brew install gnutls
