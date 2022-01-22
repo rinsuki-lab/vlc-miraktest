@@ -1,0 +1,15 @@
+diff --git a/buildMobileVLCKit.sh b/buildMobileVLCKit.sh
+--- buildMobileVLCKit.sh
++++ buildMobileVLCKit.sh
+@@ -540,9 +540,10 @@
+         --enable-ass \
+         --disable-fontconfig \
+         --disable-gpg-error \
+         --disable-vncclient \
+-        --disable-gnutls \
++        --disable-securetransport \
++        --enable-gnutls \
+         --disable-lua \
+         --disable-luac \
+         --disable-aribb24 \
+         --disable-aribb25 \
