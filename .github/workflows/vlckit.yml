@@ -58,7 +58,9 @@ jobs:
           patch -p1 < ../../vlc-build/patches/patch_user_agent.patch
         working-directory: ./libvlc/vlc
       - name: Apply VLCKit patches
-        run: git am ../../Resources/MobileVLCKit/patches/*.patch
+        run: |
+          rm ../../Resources/MobileVLCKit/patches/0012-Work-around-lack-of-__thread-storage-qualifier-on-ol.patch
+          git am ../../Resources/MobileVLCKit/patches/*.patch
         working-directory: ./libvlc/vlc
       - name: Install Dependencies
         run: |
