@@ -33,7 +33,7 @@ jobs:
   build:
     needs: [actionlint]
 
-    runs-on: ${{ matrix.os }}
+    runs-on: macOS-latest
 
     steps:
       - uses: actions/checkout@v2
