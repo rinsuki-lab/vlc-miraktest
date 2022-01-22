@@ -49,7 +49,7 @@ jobs:
         with:
           path: vlc-build
       - name: Apply MirakTest patches
-        run: 
+        run: |
           patch -p1 < ../../vlc-build/patches/patch_mac_build_arg.patch
           patch -p1 < ../../vlc-build/patches/dump_aribsub.patch
           patch -p1 < ../../vlc-build/patches/dump_pcr.patch
