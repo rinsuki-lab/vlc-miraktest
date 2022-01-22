@@ -50,6 +50,7 @@ jobs:
           path: vlc-build
       - name: Prepare
         run: |
+          ls vlc-build/patches/
           cp vlc-build/patches/*.patch libvlc/patches/
           brew install gnutls
       - name: Build
