@@ -41,18 +41,18 @@ jobs:
         with:
           repository: "videolan/VLCKit"
           ref: ${{ env.VLCKIT_HASH }}
-      - uses: actions/checkout@v2
-        with:
-          repository: "videolan/vlc"
-          path: libvlc/vlc
-          ref: ${{ env.VLC_HASH }}
-      - uses: actions/checkout@v2
-        with:
-          path: vlc-build
-      - name: Apply VLCKit patches
-        run: |
-          git am ../../Resources/MobileVLCKit/patches/*.patch
-        working-directory: ./libvlc/vlc
+      # - uses: actions/checkout@v2
+      #   with:
+      #     repository: "videolan/vlc"
+      #     path: libvlc/vlc
+      #     ref: ${{ env.VLC_HASH }}
+      # - uses: actions/checkout@v2
+      #   with:
+      #     path: vlc-build
+      # - name: Apply VLCKit patches
+      #   run: |
+      #     git am ../../Resources/MobileVLCKit/patches/*.patch
+      #   working-directory: ./libvlc/vlc
       # - name: Apply MirakTest patches
       #   run: |
       #     patch -p1 < ../../vlc-build/patches/patch_mac_build_arg.patch
@@ -62,16 +62,16 @@ jobs:
       #     patch -p1 < ../../vlc-build/patches/patch_version.patch
       #     patch -p1 < ../../vlc-build/patches/patch_user_agent.patch
       #   working-directory: ./libvlc/vlc
-      - name: Apply Patches to VLCKit itself
-        run: |
-          patch < vlc-build/patches/vlckit/configure.patch
-      - name: Install Dependencies
-        run: |
-          brew install gnutls autoconf automake m4 libtool pkg-config cmake yasm ragel protobuf ant xz bison nasm help2man meson ninja
-          brew link --force bison
+      # - name: Apply Patches to VLCKit itself
+      #   run: |
+      #     patch < vlc-build/patches/vlckit/configure.patch
+      # - name: Install Dependencies
+      #   run: |
+      #     brew install gnutls autoconf automake m4 libtool pkg-config cmake yasm ragel protobuf ant xz bison nasm help2man meson ninja
+      #     brew link --force bison
       - name: Build
         run: |
-          ./buildMobileVLCKit.sh -x -n -v
+          ./buildMobileVLCKit.sh -x -v
       - name: Pack build artifact
         run: zip -rq VLCKit.framework.zip ./build/VLCKit.framework
       - name: Upload build artifact
