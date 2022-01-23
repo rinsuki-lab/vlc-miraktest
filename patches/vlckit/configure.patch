@@ -41,8 +41,8 @@ diff --git a/buildMobileVLCKit.sh b/buildMobileVLCKit.sh
 -        --enable-libplacebo \
 +        --enable-aribb24 \
 +        --enable-aribb25 \
-+        --disaable-vpx \
-+        --disaable-libdsm \
++        --disable-vpx \
++        --disable-libdsm \
 +        --disable-smb2 \
 +        --disable-libplacebo \
          --disable-sparkle \
