@@ -63,10 +63,10 @@ jobs:
         working-directory: ./libvlc/vlc
       - name: Apply Patches to VLCKit itself
         run: |
-          patch < vlc-build/patches/vlckit/gnutls.patch
+          patch < vlc-build/patches/vlckit/configure.patch
       - name: Install Dependencies
         run: |
-          brew install gnutls
+          brew install gnutls autoconf automake m4 libtool pkg-config cmake yasm ragel protobuf ant xz bison nasm help2man meson ninja
       - name: Build
         run: |
           ./buildMobileVLCKit.sh -x -n

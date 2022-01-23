@@ -1,0 +1,40 @@
+diff --git a/buildMobileVLCKit.sh b/buildMobileVLCKit.sh
+--- buildMobileVLCKit.sh
++++ buildMobileVLCKit.sh
+@@ -519,9 +519,9 @@
+         --disable-kate \
+         --disable-caca \
+         --disable-gettext \
+         --disable-mpcdec \
+-        --enable-upnp \
++        --disable-upnp \
+         --disable-gme \
+         --disable-srt \
+         --disable-tremor \
+         --enable-vorbis \
+@@ -540,17 +540,18 @@
+         --enable-ass \
+         --disable-fontconfig \
+         --disable-gpg-error \
+         --disable-vncclient \
+-        --disable-gnutls \
++        --disable-securetransport \
++        --enable-gnutls \
+         --disable-lua \
+         --disable-luac \
+-        --disable-aribb24 \
+-        --disable-aribb25 \
+-        --enable-vpx \
+-        --enable-libdsm \
+-        --enable-smb2 \
+-        --enable-libplacebo \
++        --enable-aribb24 \
++        --enable-aribb25 \
++        --disaable-vpx \
++        --disaable-libdsm \
++        --disable-smb2 \
++        --disable-libplacebo \
+         --disable-sparkle \
+         --disable-growl \
+         --disable-breakpad \
+         --disable-ncurses \
