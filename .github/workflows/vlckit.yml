@@ -68,7 +68,7 @@ jobs:
       - name: Install Dependencies
         run: |
           brew install gnutls autoconf automake m4 libtool pkg-config cmake yasm ragel protobuf ant xz bison nasm help2man meson ninja
-          brew link ---force bison
+          brew link --force bison
       - name: Build
         run: |
           ./buildMobileVLCKit.sh -x -n -v
