@@ -70,7 +70,7 @@ jobs:
           brew install gnutls autoconf automake m4 libtool pkg-config cmake yasm ragel protobuf ant xz bison nasm help2man meson ninja
       - name: Build
         run: |
-          ./buildMobileVLCKit.sh -x -n
+          ./buildMobileVLCKit.sh -x -n -v
       - name: Pack build artifact
         run: zip -rq VLCKit.framework.zip ./build/VLCKit.framework
       - name: Upload build artifact
