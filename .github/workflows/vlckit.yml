@@ -36,6 +36,7 @@ jobs:
     runs-on: macOS-latest
 
     steps:
+      - run: sudo xcode-select -s /Applications/Xcode_11.7.app
       - uses: actions/checkout@v2
         with:
           repository: "videolan/VLCKit"
