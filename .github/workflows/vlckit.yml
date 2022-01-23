@@ -53,15 +53,15 @@ jobs:
         run: |
           git am ../../Resources/MobileVLCKit/patches/*.patch
         working-directory: ./libvlc/vlc
-      - name: Apply MirakTest patches
-        run: |
-          patch -p1 < ../../vlc-build/patches/patch_mac_build_arg.patch
-          patch -p1 < ../../vlc-build/patches/dump_aribsub.patch
-          patch -p1 < ../../vlc-build/patches/dump_pcr.patch
-          patch -p1 < ../../vlc-build/patches/dump_tot.patch
-          patch -p1 < ../../vlc-build/patches/patch_version.patch
-          patch -p1 < ../../vlc-build/patches/patch_user_agent.patch
-        working-directory: ./libvlc/vlc
+      # - name: Apply MirakTest patches
+      #   run: |
+      #     patch -p1 < ../../vlc-build/patches/patch_mac_build_arg.patch
+      #     patch -p1 < ../../vlc-build/patches/dump_aribsub.patch
+      #     patch -p1 < ../../vlc-build/patches/dump_pcr.patch
+      #     patch -p1 < ../../vlc-build/patches/dump_tot.patch
+      #     patch -p1 < ../../vlc-build/patches/patch_version.patch
+      #     patch -p1 < ../../vlc-build/patches/patch_user_agent.patch
+      #   working-directory: ./libvlc/vlc
       - name: Apply Patches to VLCKit itself
         run: |
           patch < vlc-build/patches/vlckit/configure.patch
