@@ -68,7 +68,7 @@ jobs:
       - name: Install Dependencies
         run: |
           brew install gnutls autoconf automake m4 libtool pkg-config cmake yasm ragel protobuf ant xz bison nasm help2man meson ninja
-          curl -o gettext-formula.rb https://github.com/Homebrew/homebrew-core/raw/b30e28a1393ce4de868f1203067abdf651e8c178/Formula/gettext.rb
+          curl -Lo gettext-formula.rb https://github.com/Homebrew/homebrew-core/raw/b30e28a1393ce4de868f1203067abdf651e8c178/Formula/gettext.rb
           brew install ./gettext-formula.rb
           brew link --force bison
       - name: Build
