@@ -75,7 +75,7 @@ diff --git a/buildMobileVLCKit.sh b/buildMobileVLCKit.sh
          --disable-projectm \
          --enable-libass \
          --enable-libxml2 \
-@@ -648,16 +651,16 @@
+@@ -648,16 +651,18 @@
          --disable-fluidsynth \
          --disable-jack \
          --disable-pulse \
@@ -93,6 +93,8 @@ diff --git a/buildMobileVLCKit.sh b/buildMobileVLCKit.sh
          --enable-taglib \
 -        --enable-smb2 \
 +        --disable-smb2 \
++        --disable-ncurses \
++        --disable-gnutls \
          --disable-mmx \
          --disable-sparkle \
          --disable-addonmanagermodules \
