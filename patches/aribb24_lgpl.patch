@@ -14,7 +14,7 @@ index 0c0ba9ff9101bba4557a9a620d6cd7c8fe7c2843..ab497c1bfddf9ae0622448d1b58a96c9
  ifeq ($(call need_pkg,"aribb24"),)
  PKGS_FOUND += aribb24
  endif
-@@ -22,6 +26,8 @@ aribb24: aribb24-$(ARIBB24_VERSION).tar.gz .sum-aribb24
+@@ -22,8 +26,6 @@ aribb24: aribb24-$(ARIBB24_VERSION).tar.gz .sum-aribb24
  DEPS_aribb24 = png
  
  .aribb24: aribb24
