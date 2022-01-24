@@ -41,27 +41,28 @@ jobs:
         with:
           repository: "videolan/VLCKit"
           ref: ${{ env.VLCKIT_HASH }}
-      # - uses: actions/checkout@v2
-      #   with:
-      #     repository: "videolan/vlc"
-      #     path: libvlc/vlc
-      #     ref: ${{ env.VLC_HASH }}
+      - uses: actions/checkout@v2
+        with:
+          repository: "videolan/vlc"
+          path: libvlc/vlc
+          ref: ${{ env.VLC_HASH }}
       - uses: actions/checkout@v2
         with:
           path: vlc-build
-      # - name: Apply VLCKit patches
-      #   run: |
-      #     git am ../../Resources/MobileVLCKit/patches/*.patch
-      #   working-directory: ./libvlc/vlc
-      # - name: Apply MirakTest patches
-      #   run: |
-      #     patch -p1 < ../../vlc-build/patches/patch_mac_build_arg.patch
-      #     patch -p1 < ../../vlc-build/patches/dump_aribsub.patch
-      #     patch -p1 < ../../vlc-build/patches/dump_pcr.patch
-      #     patch -p1 < ../../vlc-build/patches/dump_tot.patch
-      #     patch -p1 < ../../vlc-build/patches/patch_version.patch
-      #     patch -p1 < ../../vlc-build/patches/patch_user_agent.patch
-      #   working-directory: ./libvlc/vlc
+      - name: Apply VLCKit patches
+        run: |
+          git am ../../Resources/MobileVLCKit/patches/*.patch
+        working-directory: ./libvlc/vlc
+      - name: Apply MirakTest patches
+        run: |
+          patch -p1 < ../../vlc-build/patches/aribb24_lgpl.patch
+          patch -p1 < ../../vlc-build/patches/patch_mac_build_arg.patch
+          patch -p1 < ../../vlc-build/patches/dump_aribsub.patch
+          patch -p1 < ../../vlc-build/patches/dump_pcr.patch
+          patch -p1 < ../../vlc-build/patches/dump_tot.patch
+          patch -p1 < ../../vlc-build/patches/patch_version.patch
+          patch -p1 < ../../vlc-build/patches/patch_user_agent.patch
+        working-directory: ./libvlc/vlc
       - name: Apply Patches to VLCKit itself
         run: |
           patch < vlc-build/patches/vlckit/configure.patch
@@ -71,7 +72,7 @@ jobs:
           brew link --force bison
       - name: Build
         run: |
-          ./buildMobileVLCKit.sh -x -v -a x86_64
+          ./buildMobileVLCKit.sh -x -v -a x86_64 -n
         env:
           SDKROOT: /Applications/Xcode_11.7.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk
       - name: Pack build artifact
