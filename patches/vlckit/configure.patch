@@ -19,7 +19,7 @@ diff --git a/buildMobileVLCKit.sh b/buildMobileVLCKit.sh
  VLCROOT=${ROOT_DIR}/libvlc/vlc
 -export PATH="$python3Path:${VLCROOT}/extras/tools/build/bin:${VLCROOT}/contrib/${HOST_TRIPLET}/bin:${VLC_PATH}:/usr/bin:/bin:/usr/sbin:/sbin"
 +[ -f /usr/local/opt/python/bin/python ] || ln -s /usr/local/opt/python/bin/python3 /usr/local/opt/python/bin/python
-+export PATH="$python3Path:${VLCROOT}/extras/tools/build/bin:${VLCROOT}/contrib/${HOST_TRIPLET}/bin:${VLC_PATH}:/usr/local/opt/python/bin:/usr/local/opt/meson/bin:/usr/bin:/bin:/usr/sbin:/sbin"
++export PATH="$python3Path:${VLCROOT}/extras/tools/build/bin:${VLCROOT}/contrib/${HOST_TRIPLET}/bin:${VLC_PATH}:/usr/local/opt/python/bin:/usr/local/opt/cmake/bin:/usr/bin:/bin:/usr/sbin:/sbin"
  BUILD_ARCH=`get_buildsystem_arch $BUILD_ARCH`
  
  info "Preparing build dirs"
