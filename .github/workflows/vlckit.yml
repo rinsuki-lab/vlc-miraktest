@@ -46,9 +46,9 @@ jobs:
       #     repository: "videolan/vlc"
       #     path: libvlc/vlc
       #     ref: ${{ env.VLC_HASH }}
-      # - uses: actions/checkout@v2
-      #   with:
-      #     path: vlc-build
+      - uses: actions/checkout@v2
+        with:
+          path: vlc-build
       # - name: Apply VLCKit patches
       #   run: |
       #     git am ../../Resources/MobileVLCKit/patches/*.patch
@@ -62,9 +62,9 @@ jobs:
       #     patch -p1 < ../../vlc-build/patches/patch_version.patch
       #     patch -p1 < ../../vlc-build/patches/patch_user_agent.patch
       #   working-directory: ./libvlc/vlc
-      # - name: Apply Patches to VLCKit itself
-      #   run: |
-      #     patch < vlc-build/patches/vlckit/configure.patch
+      - name: Apply Patches to VLCKit itself
+        run: |
+          patch < vlc-build/patches/vlckit/configure.patch
       # - name: Install Dependencies
       #   run: |
       #     brew install gnutls autoconf automake m4 libtool pkg-config cmake yasm ragel protobuf ant xz bison nasm help2man meson ninja
