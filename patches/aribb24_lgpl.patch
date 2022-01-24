@@ -2,7 +2,7 @@ diff --git a/contrib/src/aribb24/rules.mak b/contrib/src/aribb24/rules.mak
 index 0c0ba9ff9101bba4557a9a620d6cd7c8fe7c2843..ab497c1bfddf9ae0622448d1b58a96c9de068cb7 100644
 --- a/contrib/src/aribb24/rules.mak
 +++ b/contrib/src/aribb24/rules.mak
-@@ -3,7 +3,11 @@
+@@ -3,11 +3,7 @@
  ARIBB24_VERSION := 1.0.3
  ARIBB24_URL := https://github.com/nkoriyama/aribb24/archive/v$(ARIBB24_VERSION).tar.gz
  
