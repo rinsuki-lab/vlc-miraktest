@@ -67,7 +67,8 @@ jobs:
           patch < vlc-build/patches/vlckit/configure.patch
       - name: Install Dependencies
         run: |
-          brew install gnutls autoconf automake m4 libtool pkg-config cmake yasm ragel protobuf ant xz bison nasm help2man meson ninja libgpg-error
+          brew install gnutls autoconf automake m4 libtool pkg-config cmake yasm ragel protobuf ant xz bison nasm help2man meson ninja
+          brew unlink --force gettext
           brew link --force bison
       - name: Build
         run: |
