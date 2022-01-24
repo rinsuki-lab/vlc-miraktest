@@ -68,8 +68,7 @@ jobs:
       - name: Install Dependencies
         run: |
           brew install gnutls autoconf automake m4 libtool pkg-config cmake yasm ragel protobuf ant xz bison nasm help2man meson ninja
-          brew unlink gettext
-          brew link --force bison
+          brew uninstall gettext
       - name: Build
         run: |
           ./buildMobileVLCKit.sh -x -v -a x86_64
