@@ -72,6 +72,8 @@ jobs:
       - name: Build
         run: |
           ./buildMobileVLCKit.sh -x -v
+        env:
+          SDKROOT: /Applications/Xcode_11.7.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk
       - name: Pack build artifact
         run: zip -rq VLCKit.framework.zip ./build/VLCKit.framework
       - name: Upload build artifact
