@@ -24,7 +24,7 @@ diff --git a/buildMobileVLCKit.sh b/buildMobileVLCKit.sh
  
  info "Preparing build dirs"
  
-@@ -519,9 +520,9 @@
+@@ -519,13 +520,13 @@
          --disable-kate \
          --disable-caca \
          --disable-gettext \
@@ -34,8 +34,13 @@ diff --git a/buildMobileVLCKit.sh b/buildMobileVLCKit.sh
          --disable-gme \
          --disable-srt \
          --disable-tremor \
-         --enable-vorbis \
-@@ -543,14 +544,14 @@
+-        --enable-vorbis \
++        --disable-vorbis \
+         --disable-sidplay2 \
+         --disable-samplerate \
+         --disable-goom \
+         --disable-vncserver \
+@@ -543,14 +544,16 @@
          --disable-vncclient \
          --disable-gnutls \
          --disable-lua \
@@ -51,7 +56,44 @@ diff --git a/buildMobileVLCKit.sh b/buildMobileVLCKit.sh
 +        --disable-libdsm \
 +        --disable-smb2 \
 +        --disable-libplacebo \
++        --disable-aom \
++        --disable-ssh2 \
          --disable-sparkle \
          --disable-growl \
          --disable-breakpad \
          --disable-ncurses \
+@@ -629,10 +632,10 @@
+         --disable-vlm \
+         --disable-nls \
+         --disable-sse \
+         --disable-notify \
+-        --enable-live555 \
+-        --enable-realrtsp \
++        --disable-live555 \
++        --disable-realrtsp \
+         --enable-swscale \
+         --disable-projectm \
+         --enable-libass \
+         --enable-libxml2 \
+@@ -648,16 +651,16 @@
+         --disable-fluidsynth \
+         --disable-jack \
+         --disable-pulse \
+         --disable-mtp \
+-        --enable-ogg \
+-        --enable-speex \
+-        --enable-theora \
+-        --enable-flac \
++        --disable-ogg \
++        --disable-speex \
++        --disable-theora \
++        --disable-flac \
+         --disable-screen \
+         --enable-freetype \
+         --enable-taglib \
+-        --enable-smb2 \
++        --disable-smb2 \
+         --disable-mmx \
+         --disable-sparkle \
+         --disable-addonmanagermodules \
+         --disable-mad > ${out}
