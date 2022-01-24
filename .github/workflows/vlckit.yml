@@ -65,9 +65,10 @@ jobs:
       - name: Apply Patches to VLCKit itself
         run: |
           patch < vlc-build/patches/vlckit/configure.patch
-      # - name: Install Dependencies
-      #   run: |
-      #     brew install autoconf automake m4 libtool pkg-config cmake yasm ragel protobuf ant xz bison nasm meson ninja
+      - name: Install Dependencies
+        run: |
+          brew install autoconf automake m4 libtool pkg-config cmake yasm ragel protobuf ant xz bison nasm meson ninja
+          brew link --force bison
       - name: Build
         run: |
           ./buildMobileVLCKit.sh -x -v -a x86_64
