@@ -76,7 +76,7 @@ jobs:
         env:
           SDKROOT: /Applications/Xcode_11.7.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk
       - name: Pack build artifact
-        run: zip -rq VLCKit.framework.zip ./build/VLCKit.framework
+        run: zip -rqy VLCKit.framework.zip ./build/VLCKit.framework
       - name: Upload build artifact
         uses: actions/upload-artifact@v2
         with:
