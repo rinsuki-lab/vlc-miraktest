@@ -7,7 +7,7 @@ diff --git a/buildMobileVLCKit.sh b/buildMobileVLCKit.sh
               IOS=no
               BITCODE=no
 -             SDK_VERSION=`xcrun --sdk macosx --show-sdk-version`
-+             SDK_VERSION=11.1
++             SDK_VERSION=12.1
               SDK_MIN=10.9
               OSVERSIONMINCFLAG=mmacosx
               OSVERSIONMINLDFLAG=macosx
