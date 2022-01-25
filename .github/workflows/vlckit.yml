@@ -72,7 +72,7 @@ jobs:
           brew link --force bison
       - name: Build
         run: |
-          ./buildMobileVLCKit.sh -x -v -a x86_64 -n
+          ./buildMobileVLCKit.sh -x -v -n
         env:
           SDKROOT: /Applications/Xcode_11.7.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk
       - name: Pack build artifact
