@@ -79,8 +79,6 @@ jobs:
         if: matrix.os == 'macos'
         run: |
           ./buildMobileVLCKit.sh -x -v -n
-        env:
-          SDKROOT: /Applications/Xcode_11.7.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk
       - name: Build (iOS)
         if: matrix.os == 'ios'
         run: |
