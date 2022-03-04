@@ -76,17 +76,17 @@ jobs:
           brew install autoconf automake m4 libtool pkg-config cmake yasm ragel protobuf ant xz bison nasm meson ninja gtk-doc help2man
           brew link --force bison
       - name: Build (macOS)
-        if: matrix.os == "macos"
+        if: matrix.os == 'macos'
         run: |
           ./buildMobileVLCKit.sh -x -v -n
         env:
           SDKROOT: /Applications/Xcode_11.7.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk
       - name: Build (iOS)
-        if: matrix.os == "ios"
+        if: matrix.os == 'ios'
         run: |
           ./buildMobileVLCKit.sh -v
       - name: Build (iOS)
-        if: matrix.os == "ios"
+        if: matrix.os == 'iossim'
         run: |
           ./buildMobileVLCKit.sh -f -v
       - name: Pack build artifact
