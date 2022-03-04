@@ -35,6 +35,11 @@ jobs:
 
     runs-on: macOS-latest
 
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos, ios, iossim]
+
     steps:
       - run: sudo xcode-select -s /Applications/Xcode_12.4.app
       - uses: actions/checkout@v2
@@ -70,11 +75,20 @@ jobs:
         run: |
           brew install autoconf automake m4 libtool pkg-config cmake yasm ragel protobuf ant xz bison nasm meson ninja gtk-doc help2man
           brew link --force bison
-      - name: Build
+      - name: Build (macOS)
+        if: matrix.os == "macos"
         run: |
           ./buildMobileVLCKit.sh -x -v -n
         env:
           SDKROOT: /Applications/Xcode_11.7.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk
+      - name: Build (iOS)
+        if: matrix.os == "ios"
+        run: |
+          ./buildMobileVLCKit.sh -v
+      - name: Build (iOS)
+        if: matrix.os == "ios"
+        run: |
+          ./buildMobileVLCKit.sh -f -v
       - name: Pack build artifact
         run: zip -rqy VLCKit.framework.zip ./build/VLCKit.framework
       - name: Upload build artifact
