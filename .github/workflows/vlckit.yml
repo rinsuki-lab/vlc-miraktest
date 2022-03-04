@@ -87,12 +87,16 @@ jobs:
         if: matrix.os == 'iossim'
         run: |
           ./buildMobileVLCKit.sh -f -v -n
-      - name: Pack build artifact
-        run: zip -rqy VLCKit.framework.zip ./build/VLCKit.framework
+      - name: Pack build artifact (macOS)
+        if: matrix.os == 'macos'
+        run: zip -rqy VLCKit.zip ./build/VLCKit.framework
+      - name: Pack build artifact (iOS)
+        if: matrix.os == 'ios'
+        run: zip -rqy VLCKit.zip ./build/MobileVLCKit.xcframework
       - name: Upload build artifact
         uses: actions/upload-artifact@v2
         with:
-          name: mac-vlckit
-          path: VLCKit.framework.zip
+          name: vlckit-${{ matrix.os }}
+          path: VLCKit.zip
       - name: Check
         run: ls -la
