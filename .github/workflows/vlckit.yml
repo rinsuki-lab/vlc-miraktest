@@ -84,11 +84,11 @@ jobs:
       - name: Build (iOS)
         if: matrix.os == 'ios'
         run: |
-          ./buildMobileVLCKit.sh -v
+          ./buildMobileVLCKit.sh -v -n -a aarch64
       - name: Build (iOS)
         if: matrix.os == 'iossim'
         run: |
-          ./buildMobileVLCKit.sh -f -v
+          ./buildMobileVLCKit.sh -f -v -n
       - name: Pack build artifact
         run: zip -rqy VLCKit.framework.zip ./build/VLCKit.framework
       - name: Upload build artifact
