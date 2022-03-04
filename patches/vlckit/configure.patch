@@ -7,7 +7,7 @@ diff --git a/buildMobileVLCKit.sh b/buildMobileVLCKit.sh
               IOS=no
               BITCODE=no
 -             SDK_VERSION=`xcrun --sdk macosx --show-sdk-version`
-+             SDK_VERSION=11.1
++             SDK_VERSION=10.15
               SDK_MIN=10.9
               OSVERSIONMINCFLAG=mmacosx
               OSVERSIONMINLDFLAG=macosx
@@ -40,7 +40,20 @@ diff --git a/buildMobileVLCKit.sh b/buildMobileVLCKit.sh
          --disable-samplerate \
          --disable-goom \
          --disable-vncserver \
-@@ -543,14 +544,16 @@
+@@ -533,32 +534,34 @@
+         --disable-schroedinger \
+         --disable-libmpeg2 \
+         --disable-chromaprint \
+         --disable-mad \
+-        --enable-fribidi \
++        --disable-fribidi \
+         --enable-libxml2 \
+-        --enable-freetype2 \
+-        --enable-ass \
++        --disable-freetype2 \
++        --disable-ass \
+         --disable-fontconfig \
+         --disable-gpg-error \
          --disable-vncclient \
          --disable-gnutls \
          --disable-lua \
@@ -62,7 +75,25 @@ diff --git a/buildMobileVLCKit.sh b/buildMobileVLCKit.sh
          --disable-growl \
          --disable-breakpad \
          --disable-ncurses \
-@@ -629,10 +632,10 @@
+         --disable-asdcplib \
+         --enable-soxr \
+         ${CUSTOMOSOPTIONS} \
+-        --enable-taglib > ${out}
++        --disable-taglib > ${out}
+ 
+     rm -f config.mak
+     echo "EXTRA_CFLAGS += ${EXTRA_CFLAGS}" >> config.mak
+     echo "EXTRA_LDFLAGS += ${EXTRA_LDFLAGS}" >> config.mak
+@@ -621,21 +624,21 @@
+         --enable-opus \
+         --disable-faad \
+         --disable-lua \
+         --disable-a52 \
+-        --enable-fribidi \
++        --disable-fribidi \
+         --disable-qt --disable-skins2 \
+         --disable-vcd \
+         --disable-vlc \
          --disable-vlm \
          --disable-nls \
          --disable-sse \
@@ -73,9 +104,13 @@ diff --git a/buildMobileVLCKit.sh b/buildMobileVLCKit.sh
 +        --disable-realrtsp \
          --enable-swscale \
          --disable-projectm \
-         --enable-libass \
+-        --enable-libass \
++        --disable-libass \
          --enable-libxml2 \
-@@ -648,16 +651,18 @@
+         --disable-goom \
+         --disable-dvdread \
+         --disable-dvdnav \
+@@ -648,19 +651,22 @@
          --disable-fluidsynth \
          --disable-jack \
          --disable-pulse \
@@ -90,12 +125,17 @@ diff --git a/buildMobileVLCKit.sh b/buildMobileVLCKit.sh
 +        --disable-flac \
          --disable-screen \
          --enable-freetype \
-         --enable-taglib \
+-        --enable-taglib \
 -        --enable-smb2 \
++        --disable-taglib \
 +        --disable-smb2 \
 +        --disable-ncurses \
 +        --disable-gnutls \
          --disable-mmx \
          --disable-sparkle \
          --disable-addonmanagermodules \
++        --disable-aom \
          --disable-mad > ${out}
+     fi
+ 
+     info "Building libvlc"
