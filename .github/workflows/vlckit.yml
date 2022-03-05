@@ -91,7 +91,7 @@ jobs:
         if: matrix.os == 'macos'
         run: zip -rqy VLCKit.zip ./build/VLCKit.framework
       - name: Pack build artifact (iOS)
-        if: matrix.os == 'ios'
+        if: matrix.os == 'ios' || matrix.os == 'iossim'
         run: zip -rqy VLCKit.zip ./build/MobileVLCKit.xcframework
       - name: Upload build artifact
         uses: actions/upload-artifact@v2
